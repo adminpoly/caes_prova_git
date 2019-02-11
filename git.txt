@@ -1,0 +1,104 @@
+# Bloc 1
+> A.txt
+git add A.txt
+git commit -m "fitxer inicial"
+> B.txt
+git add B.txt
+git commit -m "fitxer inicial"
+git push
+
+# Bloc 2
+echo "Canvi A1" >> A.txt
+echo "Canvi B1" >> B.txt
+git add A.txt B.txt
+git commit -m "Canvi A1, B1"
+git push
+
+# Bloc 3
+git branch branca1
+git checkout branca1
+> C.txt
+echo "canvi C1 branca 1" >> C.txt
+git add C.txt
+git commit -m "canvi C1 branca 1"
+git push --set-upstream origin branca1
+
+# Bloc 4
+git checkout master
+git branch branca2
+git checkout branca2
+> D.txt
+echo "canvi D1 branca 2" >> D.txt
+git add D.txt
+git commit -m "canvi D1 branca 2"
+git push --set-upstream origin branca2
+
+# Bloc 5
+git checkout branca1
+git merge branca2
+
+git checkout master 
+git merge branca1
+
+# Bloc 6
+> E.txt
+git add E.txt
+git commit -m "fitxer inicial"
+git push
+git branch branca3
+git checkout branca3
+echo "canvi E1 branca 3" >> E.txt
+git add E.txt
+git commit -m "canvi E1 branca 3"
+git push --set-upstream origin branca3
+git checkout master
+git branch branca4
+git checkout branca4
+echo "canvi E1 branca 4" >> E.txt
+git add E.txt
+git commit -m "canvi E1 branca 4"
+git push --set-upstream origin branca4
+git checkout master
+git merge branca3 branca4
+# arreglar conflicte
+git add E.txt
+git commit 
+git push
+
+#Bloc 7
+echo "Canvi A2" >> A.txt
+git add A.txt
+git commit -m "Canvi A2"
+git push
+
+git revert HEAD
+git push 
+
+#Bloc 8
+echo "Canvi A3" >> A.txt
+git add A.txt
+git commit -m "Canvi A3"
+echo "Canvi B2" >> B.txt
+git add B.txt
+git commit -m "Canvi B2"
+echo "Canvi C1" >> C.txt
+git add C.txt
+git commit -m "Canvi C1"
+
+git revert HEAD 7f86d8cf7990bb35a5e3320a4e876dcb49cec812
+
+git push
+
+
+
+
+
+
+
+
+
+
+
+
+
+
